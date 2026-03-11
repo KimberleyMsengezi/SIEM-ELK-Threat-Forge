@@ -13,9 +13,9 @@
 
 </div>
 
-## Project Overview (Technical Deep-Dive – 350 words)
+## Project Overview 
 
-ELK-ThreatForge is a fully containerized, production-minded open-source SIEM platform engineered to replicate enterprise-grade detection engineering used by Tier-1 MSSPs in the UAE and globally. Built on Elastic Stack 8.15+, the lab leverages **Elastic Agent Fleet management simulation**, **custom ingest pipelines with Painless scripting** for real-time log enrichment (geo-IP, user-agent parsing, MITRE tagging), and **Event Query Language (EQL)** + **Kibana Query Language (KQL)** for high-fidelity behavioral correlation — far beyond basic rule-based alerting.
+SIEM-ELK-ThreatForge is a fully containerized, production-based, open-source SIEM platform engineered to replicate enterprise-grade detection engineering used by Tier-1 MSSPs in the UAE and globally. Built on Elastic Stack 8.15+, the lab leverages **Elastic Agent Fleet management simulation**, **custom ingest pipelines with Painless scripting** for real-time log enrichment (geo-IP, user-agent parsing, MITRE tagging), and **Event Query Language (EQL)** + **Kibana Query Language (KQL)** for high-fidelity behavioral correlation — far beyond basic rule-based alerting.
 
 The architecture employs a single-node Elasticsearch cluster with **ILM policies**, **rollup indices** for long-term retention, and **machine-learning anomaly detection jobs** (simulated via hybrid Python + Elastic ML). Log ingestion is handled through **Filebeat + Winlogbeat + custom Elastic Agent policies**, forwarding Windows EVTX, Linux auditd/syslog, and network flows from multiple simulated endpoints.
 
