@@ -25,8 +25,6 @@ Anomaly detection is augmented with a **scikit-learn Isolation Forest + statisti
 
 All components are orchestrated via Docker Compose (with persistent volumes and health checks), enabling one-command deployment. Simulated attack surface uses Atomic Red Team TTPs + custom PowerShell/Cobalt-Strike emulation scripts, producing 500–2000 events per simulation run. Professional incident response artifacts (timelines, kill-chain mapping, executive summaries) are auto-generated.
 
-This lab demonstrates full-spectrum detection engineering, threat hunting with ATT&CK Navigator integration, root-cause analysis, and automated reporting — exactly what hiring managers at UAE MSSPs demand in 2026.
-
 ## Screenshots Gallery (Live SIEM in Action)
 
 <div align="center">
