@@ -15,13 +15,13 @@
 
 ## Project Overview 
 
-SIEM-ELK-ThreatForge is a fully containerized, production-based, open-source SIEM platform engineered to replicate enterprise-grade detection engineering used by Tier-1 MSSPs in the UAE and globally. Built on Elastic Stack 8.15+, the lab leverages **Elastic Agent Fleet management simulation**, **custom ingest pipelines with Painless scripting** for real-time log enrichment (geo-IP, user-agent parsing, MITRE tagging), and **Event Query Language (EQL)** + **Kibana Query Language (KQL)** for high-fidelity behavioral correlation — far beyond basic rule-based alerting.
+SIEM-ELK-ThreatForge is a fully containerized, production-based, open-source SIEM platform engineered to replicate enterprise-grade detection engineering used by Tier-1 MSSPs in the UAE and globally. Built on Elastic Stack 8.15+, the lab leverages **Elastic Agent Fleet management simulation**, **custom ingest pipelines with Painless scripting** for real-time log enrichment (geo-IP, user-agent parsing, MITRE tagging), and **Event Query Language (EQL)** + **Kibana Query Language (KQL)** for high-fidelity behavioral correlation far beyond basic rule-based alerting.
 
 The architecture employs a single-node Elasticsearch cluster with **ILM policies**, **rollup indices** for long-term retention, and **machine-learning anomaly detection jobs** (simulated via hybrid Python + Elastic ML). Log ingestion is handled through **Filebeat + Winlogbeat + custom Elastic Agent policies**, forwarding Windows EVTX, Linux auditd/syslog, and network flows from multiple simulated endpoints.
 
 Threat detection is powered by **15+ custom Sigma-to-EQL converted rules** mapped directly to MITRE ATT&CK v14 (T1003.001 Credential Dumping, T1021 Lateral Movement, T1486 Ransomware Impact, T1566 Phishing). The detection engine uses **sequence-based EQL** for multi-event correlation (e.g., “failed logon → LSASS access → SMB lateral movement within 60s”).
 
-Anomaly detection is augmented with a **scikit-learn Isolation Forest + statistical baselining Python module** that ingests enriched logs via Elasticsearch Python client, flags off-hour brute-force, impossible travel, and entropy-based command-line anomalies — automatically exporting STIX 2.1 IOCs and triggering Kibana alerts.
+Anomaly detection is augmented with a **scikit-learn Isolation Forest + statistical baselining Python module** that ingests enriched logs via Elasticsearch Python client, flags off-hour brute-force, impossible travel, and entropy-based command-line anomalies automatically exporting STIX 2.1 IOCs and triggering Kibana alerts.
 
 All components are orchestrated via Docker Compose (with persistent volumes and health checks), enabling one-command deployment. Simulated attack surface uses Atomic Red Team TTPs + custom PowerShell/Cobalt-Strike emulation scripts, producing 500–2000 events per simulation run. Professional incident response artifacts (timelines, kill-chain mapping, executive summaries) are auto-generated.
 
