@@ -1,0 +1,3 @@
+# Simple phishing + credential dump simulation
+echo "Simulating ransomware execution..."
+echo '{"event": "ransomware_encryption", "files": 245}' > /logs/ransomware.log
