@@ -1,0 +1,25 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /logs/*.log
+  fields:
+    host: linux-endpoint
+    type: security
+
+- type: winlog
+  enabled: true
+  event_logs:
+    - Application
+    - Security
+    - System
+  fields:
+    host: windows-endpoint
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+  username: ""
+  password: ""
+
+setup.kibana:
+  host: "http://kibana:5601"
