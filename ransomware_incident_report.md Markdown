@@ -1,0 +1,15 @@
+# Incident Report: Simulated Ransomware Campaign
+
+**Date:** 2025-03-10  
+**Analyst:** Kimberley  
+**Timeline:**  
+- 14:22 - Phishing email delivered  
+- 14:25 - Malicious payload executed (MITRE T1204)  
+- 14:30 - File encryption started (MITRE T1486)  
+
+**IOCs:**  
+- SHA256: cf8be2f0e72b05fa3a8d91811ac89826...  
+- C2 IP: 45.76.XX.XX  
+
+**Root Cause:** Unpatched endpoint + disabled AV  
+**Recommendation:** Deploy Elastic Defend + custom rule T1486
